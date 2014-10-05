@@ -1,0 +1,10 @@
+language: java
+install:
+   - "sudo pip install lizard"
+jdk:
+  - openjdk7
+  - oraclejdk7
+  - oraclejdk8
+os:
+  - linux
+  - osx
