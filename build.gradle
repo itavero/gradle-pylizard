@@ -24,8 +24,8 @@ versioner {
 }
 apply plugin: "com.sarhanm.versioner"
 
-group = "nl.arnom"
-jar.baseName = "gradle-pylizard"
+group = "amnl"
+project.description = "Add code complexity reports to your Gradle build using Lizard (written in Python)."
 
 sourceCompatibility = 1.6
 targetCompatibility = 1.6
@@ -66,7 +66,7 @@ publishing {
 
             pom.withXml {
                 def root = asNode()
-                root.appendNode("description", "Add code complexity reports to your Gradle build using Lizard (written in Python).")
+                root.appendNode("description", project.description)
                 root.children().last() + pomConfig
             }
         }
@@ -77,12 +77,12 @@ bintray {
     user = bintrayUser
     key = bintrayKey
     publications = ["mavenJava"]
-    dryRun = true
+    dryRun = false
     publish = false
     pkg {
         repo = "gradle"
-        name = jar.baseName
-        desc = "Add code complexity reports to your Gradle build using Lizard (written in Python)."
+        name = rootProject.name
+        desc = project.description
         licenses = ["MIT"]
         websiteUrl = "https://github.com/itavero/gradle-pylizard"
         issueTrackerUrl = "https://github.com/itavero/gradle-pylizard/issues"
@@ -90,7 +90,7 @@ bintray {
         labels = ["gradle", "lizard", "python", "SCA", "analysis"]
         version {
             name = project.version
-            attributes = ['gradle-plugin': 'amnl.pylizard:nl.arnom:gradle-pylizard']
+            attributes = ['gradle-plugin': 'amnl.pylizard:amnl:gradle-pylizard']
         }
     }
 }

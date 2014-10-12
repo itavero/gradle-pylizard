@@ -1,4 +1,6 @@
 # PyLizard Gradle Plugin
+[ ![Download](https://api.bintray.com/packages/amnl/gradle/gradle-pylizard/images/download.svg) ](https://bintray.com/amnl/gradle/gradle-pylizard/_latestVersion)
+
 Adds tasks for running the [Lizard code complexity](http://www.lizard.ws/) tool from Gradle.
 
 ## Requirements
