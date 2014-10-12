@@ -22,7 +22,7 @@ public class VersionTask extends AbstractLizardTask {
     public void showVersion() throws LizardExecutionException {
         try {
             final String result = getLizardRunner().runLizardWithArgs("--version");
-            getLogger().info("Version:\t" + result);
+            getLogger().quiet("Version:\t" + result);
         } catch (IOException e) {
             getLogger().log(LogLevel.ERROR, "Lizard execution failed", e);
         } catch (InterruptedException e) {

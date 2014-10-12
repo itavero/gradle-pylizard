@@ -5,6 +5,7 @@ buildscript {
     dependencies {
         classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:0.6"
         classpath "com.sarhanm:gradle-versioner:1.0.45.master.6a0e39b"
+        classpath "amnl:gradle-pylizard:1.0.+"
     }
 }
 
@@ -15,6 +16,7 @@ apply plugin: "pmd"
 apply plugin: "findbugs"
 apply plugin: "jdepend"
 apply plugin: "jacoco"
+apply plugin: "amnl.pylizard"
 
 import com.sarhanm.versioner.VersionerOptions
 
@@ -102,7 +104,11 @@ jacocoTestReport {
     }
 }
 
-task staticCodeAnalysis(dependsOn: ["findbugsMain", "findbugsTest", "pmdMain", "jdependMain"]) {}
+lizard {
+    includes = ["src/main"]
+}
+
+task staticCodeAnalysis(dependsOn: ["findbugsMain", "findbugsTest", "pmdMain", "jdependMain", "lizard"]) {}
 
 task testReport(dependsOn: ["test", "jacocoTestReport"]) {}
 
