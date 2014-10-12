@@ -19,11 +19,17 @@ pip install lizard
 
 ## Configuration
 Just add the plugin to your `build.gradle` and your good to go.
+Installation instructions can be found on [plugins.gradle.org](http://plugins.gradle.org/plugin/amnl.pylizard).
+
 If no directories or source sets are configured, the plugin adds the `src` directory by default.
 However, if you do wish to configure Lizard, have a look at the example below.
 
 ```groovy
 lizard {
+    // Path where lizard.xml is stored
+    // Relative to your projects build directory
+    reportsDir = "reports"
+    
     // The paths you wish to include
     // These are relative to your project folder
     includes = ["src"]

@@ -102,6 +102,8 @@ jacocoTestReport {
     }
 }
 
+task staticCodeAnalysis(dependsOn: ["findbugsMain", "findbugsTest", "pmdMain", "jdependMain"]) {}
+
 task testReport(dependsOn: ["test", "jacocoTestReport"]) {}
 
 task wrapper(type: Wrapper, description: "Gradle Wrapper task") {
