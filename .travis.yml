@@ -1,10 +1,17 @@
 language: java
 install:
-   - "sudo pip install lizard"
+  - "sudo pip install codecov"
+  - "sudo pip install lizard"
+before_script:
+  - "touch gradle.properties"
+  - "echo 'bintrayUser=unknown' >> gradle.properties"
+  - "echo 'bintrayKey=unknown' >> gradle.properties"
+script:
+  - "./gradlew clean testReport"
+after_success:
+  - "cp build/reports/jacoco/test/*.xml jacoco.xml"
+  - "codecov"
 jdk:
   - openjdk7
   - oraclejdk7
   - oraclejdk8
-os:
-  - linux
-  - osx

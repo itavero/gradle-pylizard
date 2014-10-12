@@ -1,5 +1,9 @@
 # PyLizard Gradle Plugin
 [ ![Download](https://api.bintray.com/packages/amnl/gradle/gradle-pylizard/images/download.svg) ](https://bintray.com/amnl/gradle/gradle-pylizard/_latestVersion)
+[ ![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square) ](https://github.com/itavero/gradle-pylizard/blob/master/LICENSE)
+[ ![Build Status](http://img.shields.io/travis/itavero/gradle-pylizard.svg?style=flat-square) ](https://travis-ci.org/itavero/gradle-pylizard)
+[ ![Test Code Coverage](http://img.shields.io/codecov/c/github/itavero/gradle-pylizard.svg?style=flat-square) ](https://codecov.io/github/itavero/gradle-pylizard)
+[ ![Issues](http://img.shields.io/github/issues/itavero/gradle-pylizard.svg?style=flat-square) ](https://github.com/itavero/gradle-pylizard/issues)
 
 Adds tasks for running the [Lizard code complexity](http://www.lizard.ws/) tool from Gradle.
 
